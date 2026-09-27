@@ -28,7 +28,7 @@ const { pathname } = Astro.url;
       {allContent
         .filter(page => page.data.order > 0)
         .map((page) => {
-          const pageHref = `/${page.id}`;
+          const pageHref = `/melissa-mabry/${page.id}`;
           return (
             <li>
               <a 
