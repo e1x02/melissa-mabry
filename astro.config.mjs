@@ -6,10 +6,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   devToolbar: {enabled: false},
-  integrations: [sitemap()]
-});
-
-export default defineConfig({
   site: 'https://e1x02.github.io',
   base: '/melissa-mabry',
-})
+  integrations: [sitemap()],
+});
