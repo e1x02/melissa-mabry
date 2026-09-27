@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+import '/src/styles.css';
+import SEO from '/src/components/seo.astro';
+const { title, description } = Astro.props;
+
+const allContent = await getCollection('pages');
+allContent.sort((a, b) => a.data.order - b.data.order);
+
+const { pathname } = Astro.url;
+---
+
+<html lang="en">
+<!-- 
+    GET YOUR OWN ARTISAN HTML @ 
+      ✨ CHEAP.URLS.LOAN ✨
+"MORE CONVENIENT THAN A NEW HOBBY" 
+-->
+	<head>
+		<SEO title={title ? "Melissa Mabry — " + title : "Melissa Mabry"} description={description ? description : "Hi there, I’m Melissa. I like to write, bake, watch movies and television, take long walks, people watch, and play MarioKart. I like to do a lot of other stuff too but those came to mind first when trying to write this so they must be important."} />
+  </head>
+  <body>
+    <header>
+    <nav>
+    <ul>
+    	<li id="home"><a href="/">Melissa Mabry</a></li>
+    	<img height="32" src="ginko.svg" alt="<#alt#>">
+      {allContent
+        .filter(page => page.data.order > 0)
+        .map((page) => {
+          const pageHref = `/${page.id}`;
+          return (
+            <li>
+              <a 
+                href={pageHref} 
+                title={page.data.title}
+                aria-current={pathname.startsWith(page.id, 1) ? 'true' : 'false'}
+              >
+                {page.data.title}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+    </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <div class="ginko"></div>
+  </body>
+</html>

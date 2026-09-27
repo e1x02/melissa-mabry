@@ -1,0 +1,94 @@
+@font-face {
+  font-family: "Libre Baskerville";
+  font-style: normal;
+  font-weight: 400 700;
+  src: url('/libre-baskerville.woff2') format('woff2');
+}
+body{
+font-family: "Libre Baskerville", "Georgia", serif;
+margin: 1.5em;
+color: #2C2C2C;
+background-color: #b0dcda;
+background-image: url("/grain.png");
+background-size: 64px 64px;
+background-attachment: fixed;
+}
+a{
+color: inherit;
+}
+main{
+margin:0.5em;
+line-height: 1.6;
+}
+main p{
+max-width: 600px;
+}
+main p:has(img){
+max-width: 100%;
+margin: 0;
+}
+main p > img{
+max-width: 600px;
+float:right;
+max-height: 75vh;
+width: auto;
+clear: both;
+}
+
+
+.ginko{
+position: fixed;
+top:0;bottom:0;left:60%;right:0;
+z-index: -10;
+background-image: url("ginko-pattern.png");
+background-repeat: no-repeat;
+background-position: 0% 10%;
+}
+
+nav ul{
+max-width: 400px;
+font-weight: 600;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+gap: 0.5em;
+padding:0;
+margin:0;
+}
+nav li{
+  display: inline-block;
+  list-style: none;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 3em;
+}
+nav li:nth-child(5n + 1){background-color: #038985;}
+nav li:nth-child(5n + 2){background-color: #3A3EA7;}
+nav li:nth-child(5n + 3){background-color: #3A74A7;}
+nav li:nth-child(5n + 4){background-color: #A73A3E;}
+nav li:nth-child(5n + 5){background-color: #3AA76D;}
+nav li:nth-child(5n + 6){background-color: #3AA7A3;}
+nav a {
+	text-decoration: underline;
+	text-decoration-color: #ffffff00;
+	transition: 0.4s;
+	transition-property: text-decoration-color;
+}
+nav #home{
+font-style: italic;
+}
+nav img{
+height: 2em;
+}
+nav a[aria-current="true"]{
+	text-decoration: underline;
+	text-decoration-color: #ffffff;
+	transition: 0.4s;
+	transition-property: text-decoration-color;
+}
+nav a:hover{
+	text-decoration: underline;
+	text-decoration-color: #ffffff;
+	transition: 0.4s;
+	transition-property: text-decoration-color;
+}
